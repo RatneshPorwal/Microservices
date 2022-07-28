@@ -35,6 +35,9 @@ public class CurrencyExchangeController {
 		if(currentExchange==null)
 			throw new RuntimeException("Unable to find the record");
 		
+		String port = environment.getProperty("local.server.port");
+		currentExchange.setEnvironment(port);
+		
 		return currentExchange;
 	}
 
